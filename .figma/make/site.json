@@ -1,0 +1,10 @@
+{
+  "description": "Streamlines user experience with pixel-perfect UI design ensuring seamless, intuitive interactions for enhanced engagement and productivity.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

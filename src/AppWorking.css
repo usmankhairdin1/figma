@@ -1,0 +1,1077 @@
+/* ABox main page: use the established navy, blue and neutral tokens. */
+.abox-page {
+  --page-ink: var(--ink);
+  --page-muted: var(--muted-foreground);
+  --page-rule: var(--hairline);
+  --page-blue: #2563eb;
+  --page-wash: color-mix(in oklab, var(--primary) 4%, white);
+  background: color-mix(in oklab, var(--surface) 42%, var(--background));
+  color: var(--page-ink);
+}
+
+.abox-container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 1.75vw, 1.625rem);
+  width: min(88rem, calc(100% - 2 * clamp(1rem, 4vw, 2.5rem)));
+  margin-inline: auto;
+}
+
+.abox-action-link {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-inline: 2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.abox-section-pad {
+  padding-block: clamp(3.5rem, 6vw, 5.25rem);
+}
+
+.abox-page a:focus-visible,
+.abox-page button:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--page-blue) 68%, white);
+  outline-offset: 3px;
+}
+
+.abox-header {
+  width: 100%;
+  top: 0;
+  padding-inline: 0;
+}
+
+.abox-header-bar {
+  width: 100%;
+  max-width: none;
+  min-height: 3.9rem;
+  margin: 0;
+  padding: 0.45rem max(clamp(1rem, 4vw, 2.5rem), calc((100vw - 88rem) / 2));
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, backdrop-filter 200ms ease;
+}
+
+.abox-header-bar.glass {
+  border-bottom-color: color-mix(in oklab, var(--page-ink) 9%, transparent);
+  background: color-mix(in oklab, white 93%, var(--surface));
+  box-shadow: 0 10px 28px -24px color-mix(in oklab, var(--page-ink) 45%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.abox-nav a {
+  transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.abox-nav a[href="/auth"] {
+  background: var(--primary);
+  box-shadow: 0 7px 16px -11px color-mix(in oklab, var(--primary) 65%, transparent);
+}
+
+.abox-nav a[href="/auth"]:hover {
+  background: color-mix(in oklab, var(--primary) 86%, white);
+}
+
+.abox-page a:hover {
+  transform: none;
+}
+
+/* A shorter, asymmetrical hero gives the marketplace preview the lead. */
+.abox-hero {
+  min-height: 100svh;
+  padding: clamp(7rem, 10vh, 8rem) 0 clamp(3rem, 4.5vw, 4rem);
+  background-image: url("/assets/hero-orbit-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.abox-hero > .pointer-events-none:first-child {
+  display: none;
+}
+
+/* Keep the hero dot field; remove only the separate horizontal line layer. */
+.abox-hero > .pointer-events-none:nth-child(2) {
+  display: none;
+}
+
+.abox-hero-grid {
+  align-items: center;
+  row-gap: 2.5rem;
+}
+
+.abox-hero-copy {
+  grid-column: 1 / span 5;
+  position: relative;
+  z-index: 2;
+  padding-block: 0.75rem;
+}
+
+.abox-hero-copy > h1 {
+  max-width: 9ch;
+  margin-top: 1rem;
+  font-size: clamp(3.5rem, 5.5vw, 5.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.abox-hero-copy > h1 span,
+.abox-guide h2 span {
+  color: var(--primary);
+}
+
+.abox-hero-copy > p {
+  max-width: 33rem;
+  margin-top: 1.2rem;
+  color: var(--page-muted);
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  line-height: 1.65;
+}
+
+.abox-hero-copy > div:nth-of-type(2) {
+  margin-top: 1.65rem;
+}
+
+.abox-hero-copy nav ul {
+  gap: 0.5rem;
+  scrollbar-width: none;
+}
+
+.abox-hero-copy nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+.abox-hero-copy nav a {
+  min-height: 2.5rem;
+  gap: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  border-color: color-mix(in oklab, var(--page-ink) 13%, white);
+  color: color-mix(in oklab, var(--page-ink) 78%, white);
+  background: color-mix(in oklab, white 88%, var(--surface));
+  box-shadow: 0 2px 5px color-mix(in oklab, var(--page-ink) 5%, transparent);
+}
+
+.abox-hero-copy nav a:hover {
+  color: var(--primary);
+  border-color: color-mix(in oklab, var(--primary) 35%, white);
+  background: white;
+  box-shadow: 0 5px 12px -9px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+
+.abox-hero-copy > div:nth-of-type(3) {
+  margin-top: 1.65rem;
+}
+
+.abox-hero-copy > div:nth-of-type(3) a:first-child {
+  background: var(--primary);
+  box-shadow: 0 8px 18px -12px color-mix(in oklab, var(--primary) 62%, transparent);
+}
+
+.abox-hero-copy > div:nth-of-type(3) a:first-child:hover {
+  background: color-mix(in oklab, var(--primary) 86%, white);
+}
+
+.abox-hero-copy > div:nth-of-type(3) a:last-child {
+  border-color: color-mix(in oklab, var(--page-ink) 15%, white);
+  background: white;
+}
+
+.abox-hero-copy > ul {
+  column-gap: 1rem;
+  row-gap: 0.6rem;
+  color: var(--page-muted);
+  font-size: 0.8rem;
+}
+
+.abox-hero-visual {
+  grid-column: 6 / -1;
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  aspect-ratio: 1.15 / 1;
+  overflow: visible;
+  isolation: isolate;
+  transform: translateX(2%);
+}
+
+.abox-hero-visual::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 10% 5%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, color-mix(in oklab, var(--primary-soft) 75%, white), transparent 72%);
+  pointer-events: none;
+}
+
+.abox-hero-visual > svg:first-child {
+  left: 50%;
+  top: 50%;
+  width: min(100%, 560px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  /* The outer SVG animation replaced this centering transform and moved the ring. */
+  animation: none;
+  opacity: 0.72;
+}
+
+.abox-hero-visual > svg:nth-child(2) {
+  width: min(82%, 420px);
+  height: auto;
+  opacity: 0.25;
+}
+
+.abox-hero-visual > div:nth-child(3) {
+  width: 52%;
+  height: 52%;
+  background: color-mix(in oklab, var(--primary) 11%, transparent);
+  filter: blur(52px);
+}
+
+.abox-ai-card {
+  width: 42%;
+  padding: clamp(0.95rem, 1.6vw, 1.3rem);
+  border-color: color-mix(in oklab, var(--page-ink) 12%, white);
+  background: linear-gradient(145deg, white, color-mix(in oklab, var(--primary-soft) 48%, white));
+  color: var(--page-ink);
+  box-shadow: 0 22px 44px -32px color-mix(in oklab, var(--primary) 48%, transparent);
+  animation: none;
+}
+
+.abox-ai-card > div:first-child {
+  padding-bottom: 0.9rem;
+  border-color: color-mix(in oklab, var(--page-ink) 12%, white);
+}
+
+.abox-ai-card > div:first-child p:first-child {
+  color: var(--page-ink);
+}
+
+.abox-ai-card > div:first-child p:nth-child(2) {
+  color: var(--page-muted);
+}
+
+.abox-ai-card > div:first-child > span:first-child {
+  background: var(--primary);
+}
+
+.abox-ai-card > div:first-child > span:last-child {
+  color: color-mix(in oklab, var(--primary) 88%, var(--ink));
+  border-color: color-mix(in oklab, var(--primary) 24%, white);
+  background: color-mix(in oklab, var(--primary-soft) 78%, white);
+}
+
+.abox-ai-card li {
+  padding: 0.65rem 0.85rem;
+  background: white !important;
+  border-color: color-mix(in oklab, var(--page-ink) 11%, white) !important;
+  box-shadow: 0 4px 12px -10px color-mix(in oklab, var(--page-ink) 42%, transparent);
+}
+
+.abox-ai-card li + li {
+  margin-top: 0.5rem;
+}
+
+.abox-ai-card li p:first-child,
+.abox-ai-card li p:last-child {
+  color: var(--page-ink) !important;
+}
+
+.abox-ai-card li p:nth-child(2) {
+  color: var(--page-muted) !important;
+}
+
+.abox-ai-card li:last-child {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  box-shadow: inset 0 1px 0 color-mix(in oklab, white 32%, transparent), 0 5px 14px -12px color-mix(in oklab, #2563eb 55%, transparent);
+}
+
+.abox-ai-card li:last-child p:first-child,
+.abox-ai-card li:last-child p:last-child {
+  color: white !important;
+}
+
+.abox-ai-card li:last-child p:nth-child(2) {
+  color: color-mix(in oklab, white 84%, #2563eb) !important;
+}
+
+.abox-hero-badge {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 8.5rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--primary) 23%, white);
+  border-radius: 1rem;
+  background: color-mix(in oklab, white 91%, var(--primary-soft));
+  color: var(--page-ink);
+  box-shadow: 0 12px 28px -20px color-mix(in oklab, var(--primary) 48%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.abox-hero-badge > p:first-child {
+  color: var(--page-muted);
+}
+
+.abox-hero-badge > p:last-child {
+  margin-top: 0.1rem;
+  color: var(--primary);
+}
+
+.abox-hero-badge--savings {
+  left: 10%;
+  top: 8%;
+}
+
+.abox-hero-badge--analysis {
+  top: 8%;
+  right: 10%;
+}
+
+.abox-hero-verified {
+  position: absolute;
+  z-index: 20;
+  right: 10%;
+  bottom: 12%;
+  padding: 0.6rem 1rem;
+  border: 1px solid color-mix(in oklab, #2563eb 65%, white);
+  border-radius: 999px;
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 10px 24px -13px color-mix(in oklab, #2563eb 70%, transparent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Three clear entry points, aligned to the shared twelve-column page grid. */
+.abox-paths {
+  background: linear-gradient(180deg, white, color-mix(in oklab, var(--primary-soft) 22%, white));
+  border-color: color-mix(in oklab, var(--page-ink) 9%, white);
+}
+
+.abox-paths .abox-container {
+  align-items: start;
+  row-gap: 2rem;
+}
+
+.abox-paths .abox-section-heading {
+  grid-column: 1 / -1;
+  margin: 0;
+  max-width: 54rem;
+}
+
+.abox-section-heading h2,
+.abox-guide h2,
+.abox-trust h2 {
+  color: var(--page-ink);
+  letter-spacing: -0.045em;
+}
+
+.abox-path-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(0.8rem, 1.5vw, 1.25rem);
+}
+
+.abox-path-card {
+  grid-column: span 4;
+  display: flex;
+  min-height: 12.625rem;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1.625rem;
+  border: 1px solid color-mix(in oklab, var(--primary) 13%, white);
+  border-radius: 1.35rem;
+  background: linear-gradient(150deg, white 45%, color-mix(in oklab, var(--primary-soft) 36%, white));
+  box-shadow: 0 12px 30px -28px color-mix(in oklab, var(--primary) 42%, transparent);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.abox-path-card:hover {
+  border-color: color-mix(in oklab, var(--primary) 35%, white);
+  background: linear-gradient(150deg, white 25%, color-mix(in oklab, var(--primary-soft) 52%, white));
+  box-shadow: 0 18px 36px -27px color-mix(in oklab, var(--primary) 48%, transparent);
+}
+
+.abox-path-card > div:first-child {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.abox-path-card > div:first-child > span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0;
+  border: 1px solid color-mix(in oklab, var(--primary) 12%, white);
+  border-radius: 1.05rem;
+  background: var(--primary-soft);
+  color: var(--primary);
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+}
+
+.abox-path-card:hover > div:first-child > span {
+  color: white;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.abox-path-card > div:first-child > h3 {
+  max-width: calc(100% - 4.5rem);
+  padding: 0.15rem 0 0;
+  color: var(--page-ink);
+  font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+  letter-spacing: -0.035em;
+}
+
+.abox-path-card > div:first-child > p {
+  max-width: calc(100% - 4.5rem);
+  margin-top: 0.65rem;
+  color: var(--page-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.abox-path-card > div:last-child {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.55rem;
+  margin: auto 0 0;
+  padding-top: 1rem;
+  white-space: nowrap;
+  color: var(--primary);
+  font-size: 0.875rem;
+}
+
+.abox-path-card > div:last-child svg {
+  transition: transform 200ms ease;
+}
+
+.abox-path-card:hover > div:last-child svg {
+  transform: translateX(3px);
+}
+
+.abox-path-card:hover::before,
+.abox-path-card:focus-visible::before {
+  opacity: 0.95;
+  inset: 14px;
+  transform: scale(1);
+}
+
+.abox-path-card:hover::after,
+.abox-path-card:focus-visible::after {
+  transform: translateX(120%);
+}
+
+/* A compact guide section pairs the explanation with four balanced metrics. */
+.abox-guide {
+  background: #fff;
+  border-block: 0;
+}
+
+/* Clear the shared divider immediately above the guide section. */
+.abox-paths {
+  border-bottom: 0;
+}
+
+.abox-guide > .abox-container {
+  padding-block: clamp(2.75rem, 4vw, 3.5rem);
+}
+
+.abox-metric-layout {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.abox-metric-copy {
+  grid-column: 1 / span 6;
+  align-self: center;
+}
+
+.abox-metric-copy > p {
+  margin-top: 1rem;
+  color: var(--page-muted);
+}
+
+.abox-metric-copy li span {
+  color: color-mix(in oklab, var(--page-ink) 82%, white);
+}
+
+.abox-metrics {
+  grid-column: 7 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.abox-stat-card {
+  display: flex;
+  min-height: 6.9rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 1rem 1.1rem;
+  border-color: color-mix(in oklab, var(--page-ink) 10%, white);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 22px -20px color-mix(in oklab, var(--page-ink) 45%, transparent);
+}
+
+.abox-stat-icon {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.45rem;
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  background: transparent;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.abox-stat-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.abox-stat-icon--primary {
+  color: var(--primary);
+}
+
+.abox-stat-icon--sage {
+  color: #059669;
+}
+
+.abox-stat-card > p:first-of-type {
+  max-width: 100%;
+  margin: 0;
+  color: var(--page-muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.abox-stat-card > p:last-child {
+  margin: auto 0 0;
+  white-space: nowrap;
+  color: var(--page-ink);
+  font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+  line-height: 1;
+}
+
+.abox-metric-copy ul {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.abox-metric-copy ul > li {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.abox-guide > .abox-container > p {
+  grid-column: 1 / -1;
+  margin-top: 1.25rem;
+}
+
+/* Keep the allowance panel intact over a clean white section canvas. */
+.abox-employer-stage {
+  display: flow-root;
+  background: #fff;
+}
+
+.abox-employer {
+  width: min(88rem, calc(100% - 2 * clamp(1rem, 4vw, 2.5rem)));
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto clamp(2rem, 4vw, 3.25rem);
+  border: 1px solid color-mix(in oklab, var(--primary) 15%, white);
+  border-radius: 1.7rem;
+  background: linear-gradient(125deg, color-mix(in oklab, var(--primary-soft) 58%, white), white 78%);
+  box-shadow: 0 24px 50px -44px color-mix(in oklab, var(--primary) 55%, transparent);
+}
+
+.abox-employer > .pointer-events-none {
+  opacity: 0.14;
+}
+
+.abox-employer-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-block: clamp(2.75rem, 4vw, 3.75rem);
+}
+
+.abox-employer-grid > div:first-child {
+  grid-column: 1 / span 6;
+  color: var(--page-ink);
+}
+
+.abox-employer-grid > div:last-child {
+  grid-column: 7 / -1;
+  padding: clamp(1.2rem, 2.5vw, 2rem);
+  border-radius: 1.35rem;
+  border-color: color-mix(in oklab, white 14%, transparent);
+  background: linear-gradient(145deg, color-mix(in oklab, var(--primary) 38%, var(--sidebar)), var(--sidebar));
+  box-shadow: 0 18px 34px -27px color-mix(in oklab, var(--sidebar) 65%, transparent);
+}
+
+.abox-employer h2 {
+  color: var(--page-ink);
+}
+
+.abox-employer h2 span {
+  color: var(--primary);
+}
+
+.abox-employer-grid > div:first-child > p {
+  color: var(--page-muted);
+}
+
+.abox-employer-grid a:first-child {
+  background: var(--primary);
+  box-shadow: 0 7px 16px -11px color-mix(in oklab, var(--primary) 65%, transparent);
+}
+
+.abox-employer-grid a:first-child:hover {
+  background: color-mix(in oklab, var(--primary) 86%, white);
+}
+
+.abox-employer-grid a:last-child {
+  border-color: color-mix(in oklab, var(--primary) 20%, white);
+  background: color-mix(in oklab, white 75%, var(--primary-soft));
+  color: var(--primary);
+  backdrop-filter: none;
+}
+
+.abox-employer-grid a:last-child:hover {
+  background: white;
+  border-color: color-mix(in oklab, var(--primary) 38%, white);
+}
+
+.abox-employer-grid > div:last-child > div > div {
+  background: color-mix(in oklab, white 5%, transparent);
+}
+
+/* Trust details read as three calm, roomy rows under a shared heading. */
+.abox-trust {
+  background: linear-gradient(180deg, white, color-mix(in oklab, var(--surface) 58%, white));
+  border-color: color-mix(in oklab, var(--page-ink) 9%, white);
+}
+
+.abox-trust > .abox-container {
+  align-items: start;
+  row-gap: 2rem;
+}
+
+.abox-trust > .abox-container > div:first-child {
+  grid-column: 1 / -1;
+  margin: 0;
+  max-width: 46rem;
+}
+
+.abox-trust-items {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.65rem;
+}
+
+.abox-trust article {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(12rem, 4fr) minmax(0, 7fr);
+  align-items: center;
+  column-gap: clamp(1rem, 2vw, 1.75rem);
+  min-height: 6.6rem;
+  padding: 1.1rem clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid color-mix(in oklab, var(--page-ink) 8%, white);
+  border-radius: 1.1rem;
+  background: color-mix(in oklab, white 80%, var(--surface));
+  box-shadow: 0 8px 20px -22px color-mix(in oklab, var(--page-ink) 44%, transparent);
+}
+
+.abox-trust article > span {
+  grid-column: 1;
+  grid-row: 1;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.9rem;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.abox-trust article h3 {
+  grid-column: 2;
+  margin: 0;
+  color: var(--page-ink);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.abox-trust article p {
+  grid-column: 3;
+  margin: 0;
+  color: var(--page-muted);
+  line-height: 1.55;
+}
+
+.abox-footer {
+  width: 100%;
+  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+  padding: 0;
+  border-top: 1px solid color-mix(in oklab, var(--page-ink) 8%, white);
+  background: var(--sidebar);
+}
+
+.abox-footer-panel {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: 0;
+  border-radius: 1.5rem 1.5rem 0 0;
+  background:
+    radial-gradient(ellipse at 8% 0%, color-mix(in oklab, var(--primary) 35%, transparent), transparent 46%),
+    linear-gradient(135deg, var(--sidebar), color-mix(in oklab, var(--primary) 16%, var(--sidebar)));
+  box-shadow: 0 28px 58px -50px color-mix(in oklab, var(--sidebar) 80%, transparent);
+}
+
+.abox-footer-panel > div:last-child {
+  border-color: color-mix(in oklab, white 13%, transparent);
+}
+
+.abox-footer-panel a[href]:not([class*="bg-blue"]) {
+  transition: color 180ms ease;
+}
+
+.abox-footer-panel a[href]:not([class*="bg-blue"]):hover {
+  color: white;
+}
+
+.abox-page button[aria-label="Open PlanAI Chat"] {
+  background: var(--primary);
+  box-shadow: 0 10px 22px -13px color-mix(in oklab, var(--primary) 70%, transparent);
+}
+
+.abox-page button[aria-label="Open PlanAI Chat"]:hover {
+  background: color-mix(in oklab, var(--primary) 86%, white);
+}
+
+@media (max-width: 900px) {
+  .abox-hero {
+    padding-top: 7.5rem;
+  }
+
+  .abox-hero-copy {
+    grid-column: 1 / -1;
+  }
+
+  .abox-hero-visual {
+    grid-column: 1 / -1;
+    width: min(100%, 560px);
+    max-width: 560px;
+    justify-self: center;
+    aspect-ratio: 1 / 0.9;
+    transform: none;
+  }
+
+  .abox-ai-card {
+    width: 42%;
+  }
+
+  .abox-path-card {
+    min-height: 16.5rem;
+    padding: 1.2rem;
+  }
+
+  .abox-hero-copy nav ul {
+    flex-wrap: nowrap;
+    margin-right: -0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .abox-metric-copy,
+  .abox-metrics {
+    grid-column: 1 / -1;
+  }
+
+  .abox-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .abox-header {
+    top: 0;
+  }
+
+  .abox-header-bar {
+    min-height: 3.65rem;
+    padding-inline: 1rem;
+  }
+
+  .abox-nav {
+    gap: 0.1rem;
+  }
+
+  .abox-nav a[href="/cart"] {
+    padding-inline: 0.5rem;
+  }
+
+  .abox-nav a[href="/auth"] {
+    padding-inline: 0.75rem;
+  }
+
+  .abox-hero {
+    padding-top: 6.75rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .abox-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 0.8rem;
+  }
+
+  .abox-hero-copy,
+  .abox-hero-visual {
+    grid-column: 1 / -1;
+  }
+
+  .abox-hero-copy > h1 {
+    max-width: 10ch;
+    font-size: clamp(3.05rem, 13vw, 4rem);
+  }
+
+  .abox-hero-copy > p {
+    max-width: 34rem;
+  }
+
+  .abox-hero-copy > div:nth-of-type(2) {
+    margin-top: 1.35rem;
+  }
+
+  .abox-hero-copy nav ul {
+    flex-wrap: nowrap;
+    margin-right: -1rem;
+    padding-right: 1rem;
+  }
+
+  .abox-hero-copy > div:nth-of-type(3) {
+    margin-top: 1.35rem;
+  }
+
+  .abox-hero-visual {
+    aspect-ratio: 1 / 1.05;
+    margin-top: 0.25rem;
+  }
+
+  .abox-hero-visual > svg:first-child {
+    width: min(106.25vw, 420px);
+  }
+
+  .abox-ai-card {
+    width: min(56%, 220px);
+    padding: 0.65rem;
+    border-radius: 1.25rem;
+  }
+
+  .abox-ai-card > div:first-child {
+    gap: 0.45rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .abox-ai-card > div:first-child > span:last-child {
+    padding-inline: 0.4rem;
+  }
+
+  .abox-ai-card ul {
+    padding-top: 0.55rem;
+  }
+
+  .abox-ai-card li {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .abox-ai-card li + li {
+    margin-top: 0.35rem;
+  }
+
+  .abox-hero-badge {
+    min-width: 0;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .abox-hero-badge--savings {
+    left: 2%;
+    top: 4%;
+  }
+
+  .abox-hero-badge--analysis {
+    right: 2%;
+    top: 4%;
+  }
+
+  .abox-hero-verified {
+    right: 2%;
+    bottom: 12%;
+    padding: 0.55rem 0.8rem;
+  }
+
+  .abox-paths .abox-section-heading,
+  .abox-path-grid {
+    grid-column: 1 / -1;
+  }
+
+  .abox-paths .abox-section-heading {
+    margin-bottom: 0.5rem;
+  }
+
+  .abox-path-card {
+    grid-column: 1 / -1;
+    min-height: 0;
+    padding: 1.25rem;
+  }
+
+  .abox-path-card > div:first-child > span {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .abox-path-card > div:first-child > h3 {
+    font-size: 1.25rem;
+  }
+
+  .abox-path-card > div:last-child {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 0.82rem;
+  }
+
+  .abox-metric-layout {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 1.25rem;
+  }
+
+  .abox-metric-copy,
+  .abox-metrics {
+    grid-column: 1 / -1;
+  }
+
+  .abox-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .abox-stat-card {
+    min-height: 6.5rem;
+    padding: 0.85rem;
+  }
+
+  .abox-stat-icon {
+    right: 0.45rem;
+    bottom: 0.35rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .abox-stat-card > p:first-of-type {
+    font-size: 0.66rem;
+  }
+
+  .abox-stat-card > p:last-child {
+    font-size: 1.45rem;
+  }
+
+  .abox-employer {
+    border-radius: 1.35rem;
+  }
+
+  .abox-employer-grid > div:first-child,
+  .abox-employer-grid > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .abox-employer-grid > div:last-child {
+    padding: 1rem;
+  }
+
+  .abox-employer-grid > div:last-child > div {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .abox-trust > .abox-container > div:first-child,
+  .abox-trust-items {
+    grid-column: 1 / -1;
+  }
+
+  .abox-trust > .abox-container > div:first-child {
+    margin-bottom: 1.5rem;
+  }
+
+  .abox-trust article {
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+    padding-block: 0.9rem;
+  }
+
+  .abox-trust article h3 {
+    grid-column: 2;
+  }
+
+  .abox-trust article p {
+    grid-column: 2;
+    margin-top: 0.25rem;
+  }
+
+  .abox-trust article > span {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .abox-footer {
+    margin-top: 2rem;
+  }
+
+  .abox-footer-panel > div:first-child {
+    gap: 2.25rem;
+    padding-inline: 1rem;
+  }
+
+  .abox-footer-panel > div:last-child > div {
+    padding-inline: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abox-page *,
+  .abox-page *::before,
+  .abox-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

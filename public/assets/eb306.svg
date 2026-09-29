@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ABoxAgency in a Box" clip-path="url(#clip0_0_5479)">
+<path id="Vector" d="M17 33.15C25.9194 33.15 33.15 25.9194 33.15 17C33.15 8.0806 25.9194 0.85 17 0.85C8.0806 0.85 0.85 8.0806 0.85 17C0.85 25.9194 8.0806 33.15 17 33.15Z" fill="#F3F4F6" stroke="#242D42" stroke-opacity="0.11" stroke-width="0.85"/>
+<path id="Vector_2" opacity="0.9" d="M17 28.05C23.1027 28.05 28.05 23.1027 28.05 17C28.05 10.8973 23.1027 5.95 17 5.95C10.8973 5.95 5.95 10.8973 5.95 17C5.95 23.1027 10.8973 28.05 17 28.05Z" stroke="#192D5D" stroke-width="1.02"/>
+<path id="Vector_3" opacity="0.55" d="M17 30.6C24.5111 30.6 30.6 24.5111 30.6 17C30.6 9.48893 24.5111 3.4 17 3.4C9.48893 3.4 3.4 9.48893 3.4 17C3.4 24.5111 9.48893 30.6 17 30.6Z" stroke="#192D5D" stroke-width="0.51" stroke-dasharray="1.19 2.04"/>
+<path id="Vector_4" d="M28.9 18.87C29.9328 18.87 30.77 18.0328 30.77 17C30.77 15.9672 29.9328 15.13 28.9 15.13C27.8672 15.13 27.03 15.9672 27.03 17C27.03 18.0328 27.8672 18.87 28.9 18.87Z" fill="#192D5D"/>
+<path id="Vector_5" d="M11.475 21.25L17 10.2L22.525 21.25" stroke="#151A26" stroke-width="1.53" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="Vector_6">
+<path d="M14.025 18.275H19.975Z" fill="black"/>
+<path d="M14.025 18.275H19.975" stroke="#151A26" stroke-width="1.275" stroke-linecap="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_5479">
+<rect width="34" height="34" fill="white"/>
+</clipPath>
+</defs>
+</svg>
